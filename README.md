@@ -17,8 +17,8 @@ to start new projects. Yes, it worked well some times, but we felt that would
 be easier and productive to have a base project that would be cloned, instead
 of generate code and copy-and-paste some stuff.
 
-We thought about create some Ruby gems to try make things more reuseble, but we
-realized that would be still most important to have a good knowledgement base.
+We thought about create some Ruby gems to try make things more reusable, but we
+realized that would be still most important to have a good knowledge base.
 
 That way, this project has two goals:
 1. serve as a template of project;
