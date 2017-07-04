@@ -1,24 +1,35 @@
-# README
+# Base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create simple information systems fastly by using code and feature conventions.
 
-Things you may want to cover:
+Base is the project that [Castro & Barros](http://castroebarros.net) uses as
+base to create information systems for small companies.
 
-* Ruby version
 
-* System dependencies
+## Why
 
-* Configuration
+For a long time we have done some Rails projects for a lot of companies and we
+have noticed some patterns among these projects, like gems, javascript
+libraries, configurations, models, etc.
 
-* Database creation
+So we've decided to create a Rails template in order to reduce the time needed
+to start new projects. Yes, it worked well some times, but we felt that would
+be easier and productive to have a base project that would be cloned, instead
+of generate code and copy-and-paste some stuff.
 
-* Database initialization
+We thought about create some Ruby gems to try make things more reuseble, but we
+realized that would be still most important to have a good knowledgement base.
 
-* How to run the test suite
+That way, this project has two goals:
+1. serve as a template of project;
+2. serve as a place to share and improve conventions.
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Getting started
 
-* ...
+Please, visit our [Wiki](https://github.com/castroebarros/base/wiki).
+
+
+## License
+
+This is a open source under the terms of the MIT License.
