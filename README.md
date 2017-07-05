@@ -1,10 +1,10 @@
 # Base
+[![CircleCI](https://circleci.com/gh/castroebarros/base.svg?style=svg)](https://circleci.com/gh/castroebarros/base)
 
 Create simple information systems fastly by using code and feature conventions.
 
 Base is the project that [Castro & Barros](http://castroebarros.net) uses as
 base to create information systems for small companies.
-
 
 ## Why
 
