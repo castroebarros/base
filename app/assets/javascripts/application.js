@@ -12,4 +12,16 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require jquery_nested_form
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/pt
+//= require bootstrap
 //= require_tree .
+
+jQuery(function() {
+  $('.money').maskMoney({prefix: "", allowZero: true, allowNegative: false, thousands: ".", decimal: ",", affixesStay: false});
+  $('.select2').select2({language: 'pt-BR'});
+});
