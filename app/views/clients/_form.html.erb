@@ -1,10 +1,42 @@
-<%= simple_form_for(client, multipart: true) do |f| %>
+<%= simple_nested_form_for(client, multipart: true) do |f| %>
   <div class="panel panel-default">
     <div class="panel-body">
       <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :name %>
+      <%= f.input :name %>
+
+      <div>
+        <%= f.label :phones, 'Telefones' %>
+        <div id="phones">
+          <%= f.fields_for :phones do |ff| %>
+            <div class="row">
+              <%= ff.hidden_field :id %>
+              <%= ff.input :number, label: false, wrapper_html: { class: 'col-md-2' }, input_html: { class: 'phone' } %>
+              <div class="col-md-2">
+                <%= ff.link_to_remove 'Remover', class: 'btn btn-default' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= f.link_to_add "Acrescentar Telefone", :phones, :data => {:target => "#phones"}, :class => 'add-nested-field' %>
+      </div>
+
+      <hr />
+
+      <div>
+        <%= f.label :emails, 'Emails'%>
+        <div id="emails">
+          <%= f.fields_for :emails do |ff| %>
+            <div class="row">
+              <%= ff.hidden_field :id %>
+              <%= ff.input :address, as: :email, label: false, wrapper_html: { class: 'col-md-4' }, input_html: { class: '' } %>
+              <div class="col-md-2">
+                <%= ff.link_to_remove 'Remover', class: 'btn btn-default' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= f.link_to_add "Acrescentar Email", :emails, :data => {:target => "#emails"}, :class => 'add-nested-field' %>
       </div>
     </div>
 
