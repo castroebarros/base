@@ -18,6 +18,11 @@
                     '/', 
                     :class => ('active' if request.path == '/') %>
       </li>
+      <li class="people">
+        <%= link_to '<i class="fa fa-users fa-fw"></i> Clientes'.html_safe, 
+                    clients_path, 
+                    :class => ('active' if request.path.start_with? clients_path) %>
+      </li>
     </ul>
   </div>
 </div>

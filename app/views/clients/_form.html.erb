@@ -1,0 +1,20 @@
+<%= simple_form_for(client, multipart: true) do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :name %>
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <%= f.submit "Salvar", class: 'btn btn-primary' %> ou
+      <%= link_to "Cancelar", :back, class: 'btn btn-default' %>
+      <%= link_to "Apagar", @client, 
+                  method: :delete, 
+                  class: 'btn btn-danger pull-right',
+                  data: { confirm: 'Tem certeza que quer apagar?' } if @client.persisted? %> 
+    </div>
+  </div>
+<% end %>

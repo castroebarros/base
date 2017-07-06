@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   devise_for :users, path_prefix: 'auth'
   get 'welcome/index'
   root 'welcome#index'
