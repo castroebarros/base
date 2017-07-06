@@ -75,6 +75,10 @@ th.check, td.check { display: none }
   display: block;
   clear: both;
 }
+.page-header {
+  margin: 0 !important;
+  border: 0 !important;
+}
 .page-header h1 {
   float: left;
 }
