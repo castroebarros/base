@@ -6,3 +6,23 @@
     <%= link_to "Editar", edit_client_path(@client), class: 'btn btn-primary' %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Contato
+      </div>
+      <table class="table">
+        <tr>
+          <td><i class="fa fa-envelope"></i></td>
+          <td><%= @client.emails.map {|a| link_to a.address, "mailto:#{a.address}" }.join(', ').html_safe %></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-phone"></i></td>
+          <td><%= @client.phones.map {|a| link_to a.number, "tel:#{a.number}" }.join(', ').html_safe %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

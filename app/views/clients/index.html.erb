@@ -8,6 +8,8 @@
     <thead>
       <tr>
         <th>Nome</th>
+        <th>Telefone</th>
+        <th>Email</th>
         <th width="30px"></th>
       </tr>
     </thead>
@@ -16,6 +18,8 @@
       <% @clients.each do |client| %>
         <tr>
           <td><%= link_to client.name, client %></td>
+          <td><%= client.phones.map(&:number).join(', ') %></td>
+          <td><%= client.emails.map(&:address).join(', ') %></td>
           <td><%= link_to 'Editar', edit_client_path(client), class: 'btn btn-default btn-xs' %></td>
         </tr>
       <% end %>
