@@ -9,7 +9,7 @@ if Rails.env.production?
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => “” # Change to the bucket name
+      :bucket => "" # Set the bucket name
     }
   }
 
