@@ -2,7 +2,7 @@
   <div class="sidebar-nav navbar-collapse">
     <ul class="nav" id="side-menu">
       <li class="sidebar-search">
-        <%= form_tag '/', :method => :get do %>
+        <%= form_tag clients_path, :method => :get do %>
           <div class="input-group custom-search-form">
             <%= text_field_tag :q, params[:q], placeholder: "Pesquisar...", class: 'form-control' %>
             <span class="input-group-btn">

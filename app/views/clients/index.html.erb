@@ -4,6 +4,12 @@
 </div>
 
 <div class="panel panel-default">
+  <% if params[:q] %>
+    <div class="panel-body">
+      Resultado da pesquisa por: "<%= params[:q] %>"
+    </div>
+  <% end %>
+
   <table class="table table-striped">
     <thead>
       <tr>
