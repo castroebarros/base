@@ -5,3 +5,11 @@ pt-BR:
     attributes:
       client:
         name: Nome
+
+# Sample of enumerize configuration:
+#
+#   enumerize:
+#     client:
+#       status: 
+#         pending: Pendente
+#         active:  Ativo
