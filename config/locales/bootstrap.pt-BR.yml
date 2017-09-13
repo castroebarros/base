@@ -7,6 +7,7 @@ pt-BR:
     links:
       back: "Voltar"
       edit: "Editar"
+      save: "Salvar"
       cancel: "Cancelar"
       confirm: "Tem certeza???"
       destroy: "Apagar"
