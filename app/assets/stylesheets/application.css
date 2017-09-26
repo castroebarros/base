@@ -31,6 +31,13 @@
   margin-bottom: 20px;
 }
 
+/* Footer */
+#footer {
+  text-align: left;
+  padding: 0 5px;
+  color: #888;
+}
+
 /* Estilo para tabelas com cabeçalho vertical, como para páginas de detalhes. */
 .table-list th {
   width: 200px;
