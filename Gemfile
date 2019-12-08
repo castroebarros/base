@@ -60,7 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #
 # Gem that we ALWAYS use:
 gem 'pg'
-gem 'devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'will_paginate'
 gem 'enumerize'
 gem 'simple_form'
@@ -86,3 +86,7 @@ gem 'figaro'
 # Full Calendar:
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# Gráficos
+# gem 'chartkick'
+# gem 'dateslices'
