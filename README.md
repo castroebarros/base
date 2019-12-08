@@ -95,6 +95,19 @@ end
 
 The `logo` is used only on login page, and `app_name` is used in both: login page and header of application.
 
+## Uploading to S3
+
+The project is set up to use paperclip and upload the files to S3 in production.
+
+You just need to define the following env vars on Heroku:
+
+```
+heroku config:set AWS_BUCKET=
+heroku config:set AWS_ACCESS_KEY_ID=
+heroku config:set AWS_SECRET_ACCESS_KEY=
+```
+
+
 
 ## License
 
