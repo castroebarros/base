@@ -118,6 +118,10 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     enumerize (2.1.2)
       activesupport (>= 3.2)
     erubi (1.6.1)
@@ -282,6 +286,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise!
+  dotenv-rails
   enumerize
   figaro
   fullcalendar-rails
