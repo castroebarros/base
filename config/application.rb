@@ -18,5 +18,7 @@ module Base
       g.stylesheets false
       g.javascripts false
     end
+    
+    config.time_zone = 'Brasilia'
   end
 end

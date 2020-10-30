@@ -1,5 +1,4 @@
 config = Rails.application.config
-config.time_zone = 'Brasilia'
 config.i18n.default_locale = 'pt-BR'
 
 if Rails.env.production? 
