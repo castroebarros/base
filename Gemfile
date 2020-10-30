@@ -74,7 +74,7 @@ gem 'jquery_mask_rails'
 # Gem that used frequently:
 #
 # Upload:
-gem 'paperclip', '~> 4.2'
+gem 'paperclip', '~> 5.2'
 gem 'aws-sdk', '< 2.0'
 
 # Boleto:
