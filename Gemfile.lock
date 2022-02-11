@@ -167,7 +167,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     momentjs-rails (2.15.1)
@@ -188,7 +190,8 @@ GEM
     parseline (1.0.3)
     pg (0.21.0)
     public_suffix (2.0.5)
-    puma (3.12.6)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -302,7 +305,7 @@ DEPENDENCIES
   paperclip (~> 5.2)
   parseline
   pg
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.1.2)
   rghost
   rghost_barcode
