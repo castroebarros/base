@@ -14,14 +14,23 @@
  *= require_tree .
  */
 
+.pagination {
+  margin: 0 !important;
+}
+.panel > .pagination {
+  padding: 10px !important;
+  padding-bottom: 5px !important;
+}
+
 #error_explanation h2 {
   font-size: 1em;
   background: rgb(184, 46, 46);
   margin: 0;
-  padding: 0 10px;
   border: 1px solid rgb(184, 46, 46);
   border-bottom: 0;
   color: white;
+  border-radius: 4px 4px 0 0;
+  padding: 10px 15px;
 }
 #error_explanation ul {
   border: 1px solid rgb(184, 46, 46);
@@ -29,7 +38,9 @@
   margin: 0;
   padding: 10px 30px;
   margin-bottom: 20px;
+  border-radius: 0 0 4px 4px;
 }
+
 
 /* Footer */
 #footer {
