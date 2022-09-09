@@ -95,6 +95,27 @@ end
 
 The `logo` is used only on login page, and `app_name` is used in both: login page and header of application.
 
+## TODO
+
+- Validation (wip)
+- Pagination (wip)
+- Fix tests
+- Upgrade bootstrap
+- Flash message translations
+- Something to take easy association scaffolds (return_to)
+- Translation on scaffold (model name)
+- Show with long created_at
+- Add details link to scaffold index
+- Include micro_payments gem
+- Include pundit with generators
+- Dashboard page
+- User registrations (controller, menu)
+- Change password
+- Recovery password page
+- Models and partial for attachment
+- Doc to create bucket via aws client
+
+
 ## License
 
 This is a open source under the terms of the MIT License.
