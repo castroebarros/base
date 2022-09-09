@@ -16,9 +16,9 @@
 //= require jquery.mask
 //= require jquery_ujs
 //= require jquery_nested_form
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/pt
+//x require moment
+//x require fullcalendar
+//x require fullcalendar/lang/pt
 //= require bootstrap
 //= require_tree .
 

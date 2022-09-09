@@ -52,7 +52,7 @@ As you can see, the origin branch is not the actual origin of our application, s
 
 ### Installing the dependencies
 
-The project is configured with a bunch of gems like pg, will_paginate, simple form, nested form, jquery-rails, paperclip and more. 
+The project is configured with a bunch of gems like pg, will_paginate, simple form, nested form, jquery-rails and more. 
 
 If you it's so much for you feel free to remove some gems from Gemfile.
 
@@ -94,20 +94,6 @@ end
 ```
 
 The `logo` is used only on login page, and `app_name` is used in both: login page and header of application.
-
-## Uploading to S3
-
-The project is set up to use paperclip and upload the files to S3 in production.
-
-You just need to define the following env vars on Heroku:
-
-```
-heroku config:set AWS_BUCKET=
-heroku config:set AWS_ACCESS_KEY_ID=
-heroku config:set AWS_SECRET_ACCESS_KEY=
-```
-
-
 
 ## License
 

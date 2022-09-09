@@ -1,4 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
   extend Enumerize
-  self.abstract_class = true
+  primary_abstract_class
 end
