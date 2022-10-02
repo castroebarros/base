@@ -98,7 +98,6 @@ The `logo` is used only on login page, and `app_name` is used in both: login pag
 ## TODO
 
 - Upgrade bootstrap
-- Flash message translations
 - Something to take easy association scaffolds (return_to)
 - Translation on scaffold (model name)
 - Show with long created_at
