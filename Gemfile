@@ -80,6 +80,7 @@ end
 # Gem that we ALWAYS use:
 gem 'devise', git: 'https://github.com/heartcombo/devise'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap', "~> 1.0"
 gem 'enumerize'
 gem 'simple_form'
 gem "nested_form"

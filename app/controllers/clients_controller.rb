@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
     else
       @clients = Client.all
     end
+    @clients = @clients.paginate(page: params[:page])
   end
 
   # GET /clients/1

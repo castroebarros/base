@@ -11,6 +11,29 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index paginate results" do
+    Client.delete_all
+    50.times { |i| Client.create name: (i + 1).to_s }
+    get clients_url
+    assert_select 'tbody tr', count: 30
+    assert_select 'tbody tr:first td:first', text: '1'
+    assert_select 'tbody tr:last  td:first', text: '30'
+
+    get clients_url(page: 2)
+    assert_select 'tbody tr', count: 20
+    assert_select 'tbody tr:first td:first', text: '31'
+    assert_select 'tbody tr:last  td:first', text: '50'
+  end
+
+  test "should get index show pagination" do
+    Client.delete_all
+    50.times { |i| Client.create name: (i + 1).to_s }
+    get clients_url
+    assert_select 'tbody tr', count: 30
+    assert_select 'tbody tr:first td:first', text: '1'
+    assert_select 'tbody tr:last  td:first', text: '30'
+  end
+
   test "should get new" do
     get new_client_url
     assert_response :success
