@@ -1,7 +1,7 @@
 <%= simple_nested_form_for(client, multipart: true) do |f| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= f.error_notification %>
+      <%= show_errors client %>
 
       <%= f.input :name %>
 

@@ -97,7 +97,6 @@ The `logo` is used only on login page, and `app_name` is used in both: login pag
 
 ## TODO
 
-- Validation (wip)
 - Upgrade bootstrap
 - Flash message translations
 - Something to take easy association scaffolds (return_to)

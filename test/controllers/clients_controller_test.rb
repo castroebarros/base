@@ -47,6 +47,12 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to client_url(Client.last)
   end
 
+  test "should create client with errors display list of error messages" do
+    post clients_url, params: { client: { name: '' } }
+    assert_select '#error_explanation'
+    assert_select 'li', text: 'Nome não pode ficar em branco'
+  end
+
   test "should show client" do
     get client_url(@client)
     assert_response :success
