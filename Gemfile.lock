@@ -83,36 +83,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
-    brI18n (3.3.0)
-      actionpack (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-    brazilian-rails (3.3.0)
-      brI18n (= 3.3.0)
-      brcep (= 3.3.0)
-      brcpfcnpj (= 3.3.0)
-      brdata (= 3.3.0)
-      brdinheiro (= 3.3.0)
-      brhelper (= 3.3.0)
-      brnumeros (= 3.3.0)
-      brstring (= 3.3.0)
-    brcep (3.3.0)
-    brcpfcnpj (3.3.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-    brdata (3.3.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-    brdinheiro (3.3.0)
-      actionpack (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      brnumeros (= 3.3.0)
-    brhelper (3.3.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-    brnumeros (3.3.0)
-    brstring (3.3.0)
-      activesupport (>= 3.0.0)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -291,7 +261,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  brazilian-rails
   capybara
   debug
   devise!

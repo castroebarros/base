@@ -85,7 +85,6 @@ gem 'enumerize'
 gem 'simple_form'
 gem "nested_form"
 gem "has_scope"
-gem 'brazilian-rails'
 gem 'jquery-rails'
 gem 'jquery_mask_rails'
 
