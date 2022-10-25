@@ -95,3 +95,4 @@ gem 'jquery_mask_rails'
 # Gráficos
 # gem 'chartkick'
 # gem 'dateslices'
+gem 'pundit'

@@ -23,6 +23,14 @@
                     clients_path, 
                     :class => ('active' if request.path.start_with? clients_path) %>
       </li>
+
+      <% if policy(User).index? %>
+        <li class="users">
+          <%= link_to(users_path, class: ('active' if request.path.start_with? users_path)) do %>
+            <i class="fa fa-key fa-fw"></i> Controle de Acesso
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

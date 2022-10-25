@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :clients
+  resources :users do
+    get :confirm, on: :member
+    get :invite, on: :member
+    get :login_as, on: :member
+  end
   devise_for :users, path_prefix: 'auth'
   get 'welcome/index'
   root 'welcome#index'

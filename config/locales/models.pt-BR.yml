@@ -5,11 +5,14 @@ pt-BR:
     attributes:
       client:
         name: Nome
+      user:
+        name: Nome
+        profile: Perfil
+        password: Senha
+        password_confirmation: Confirmação da senha
 
-# Sample of enumerize configuration:
-#
-#   enumerize:
-#     client:
-#       status: 
-#         pending: Pendente
-#         active:  Ativo
+  enumerize:
+    user:
+      profile: 
+        admin: Admin
+        common: Comum

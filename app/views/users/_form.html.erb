@@ -1,45 +1,24 @@
-<%= form_for(@usuario) do |f| %>
-  <% if @usuario.errors.any? %>
+<%= simple_form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@usuario.errors.count, "erro") %>:</h2>
+      <h2>Atenção:</h2>
 
       <ul>
-      <% @usuario.errors.full_messages.each do |msg| %>
+      <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :nome %>
-    <%= f.text_field :nome, :class => 'form-control' %>
-  </div>
+  <legend>Informações de acesso</legend>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :profile %>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, :class => 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :perfil %>
-    <%= f.select :perfil, Usuario.perfil.options, {}, :class => 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, :class => 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :class => 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :ativo, 'Situação' %>
-    <%= f.select :ativo, [['Ativo', true], ['Inativo', false]], {}, :class => 'form-control' %>
-  </div>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :active, collection: [['Ativo', true], ['Inativo', false]], label: 'Situação' %>
 
   <div class="actions">
     <%= f.submit 'Salvar', class: 'btn btn-primary' %>

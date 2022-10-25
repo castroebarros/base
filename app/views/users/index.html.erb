@@ -1,48 +1,93 @@
-<div class="row">
-  <div class="col-lg-12">
-    <ul class="nav nav-tabs" style="margin-top: 10px">
-      <li class="usuarios active"><%= link_to "Usuários", usuarios_path %></li>
-      <li class="configuracoes"><%= link_to "Contrato", configuracoes_path %></li>
-      <li class="ferias"><%= link_to "Férias", ferias_path %></li>
-      <li class="feriados"><%= link_to "Feriados", dia_feriados_path %></li>
-    </ul>
-  </div>
+<div class="page-header">
+  <h1>Usuários</h1>
+  <%= link_to '<i class="fa fa-plus"></i> Cadastrar Usuário'.html_safe, new_user_path, :class => 'btn btn-large btn-primary pull-right' %>
 </div>
 
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">
-      Usuários
-      <%= link_to '<i class="fa fa-plus"></i> Cadastrar Usuário'.html_safe, new_usuario_path, :class => 'btn btn-large btn-primary pull-right' %>
-    </h1>
-  </div>
-</div>
+<%= form_with url: {action: action_name}, method: :get, local: true do |f| %>
+  <%= hidden_field_tag :sort_field, params[:sort_field] %>
+  <%= hidden_field_tag :sort_order, params[:sort_order] %>
 
-<!-- /.row -->
-<div class="panel panel-default">
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-      <thead>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Último acesso</th>
-            <th>Situação</th>
+  <div class="panel panel-default">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <thead>
+          <tr>
+            <th data-sort-field="name">Nome</th>
+            <th data-sort-field="email">E-mail</th>
+            <th data-sort-field="active">Situação</th>
+            <th data-sort-field="profile">Perfil</th>
+            <th data-sort-field="date">Último acesso</th>
             <th width="100px">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @usuarios.each do |usuario| %>
-          <tr class="odd gradeX">
-            <td  style="border-left: 3px solid #eee"><%= link_to usuario.nome, usuario %></td>
-            <td><%= usuario.email %></td>
-            <td><%= l usuario.current_sign_in_at, :format => '%d/%m/%Y %H:%M' if usuario.current_sign_in_at %></td>
-            <td><%= usuario.ativo ? 'Ativo' : 'Inativo' %></td>
-            <td><%= link_to "Editar", edit_usuario_path(usuario), class: 'btn btn-default btn-sm' %></td>
           </tr>
-      <% end %>
-      </tbody>
-    </table>
+          <tr class="filter">
+            <th><%= text_field_tag :name, params[:name] %></th>
+            <th><%= text_field_tag :email, params[:email] %></th>
+            <th><%= select_tag :active, options_for_select([['Ativo', 'true'], ['Inativo', 'false']], params[:active]), prompt: 'Todos' %></th>
+            <th><%= select_tag :profile, options_for_select(User.profile.options, params[:profile]), prompt: 'Todos' %></th>
+            <th>
+              <%= text_field_tag :date_from, params[:date_from], type: 'date', style: 'width: 140px' %>
+              <%= text_field_tag :date_to, params[:date_to], type: 'date', style: 'width: 140px; margin-top: 5px;' %>
+            </th>
+            <th><%= submit_tag "Filtrar" %></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <tr class="odd gradeX">
+              <td  style="border-left: 3px solid #eee"><%= link_to user.name, user %></td>
+              <td>
+                <div><%= user.email %></div>
+                <% if user.respond_to? :confirmed? %>
+                  <small>
+                  <% if user.confirmed? %>
+                    <span title="Confirmado em <%= l user.confirmed_at %>">Confirmado</span>
+                  <% else %>
+                    Não confirmado | <%= link_to 'Confirmar', confirm_user_path(user) %>
+                  <% end %>
+                  </small>
+                <% end %>
+              </td>
+              <td><%= user.active ? 'Ativo' : 'Inativo' %></td>
+              <td><%= user.profile_text %></td>
+              <td><%= l user.current_sign_in_at, :format => '%d/%m/%Y %H:%M' if user.current_sign_in_at %></td>
+              <td><%= link_to "Editar", edit_user_path(user), class: 'btn btn-default btn-sm' %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
   </div>
-  <!-- /.table-responsive -->
-</div>
+<% end %>
+
+<style>
+  tr td, tr th { font-size: 12px; } /* Para não quebrar a tabela na horizontal */
+  .filter th { vertical-align: baseline !important; font-size: 12px;}
+  th[data-sort-field].active {
+    background: #fcfcfc;
+  }
+  th[data-sort-field] {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  tr input, tr select {
+    width: 100%;
+    height: 25px;
+  }
+</style>
+<script>
+  $(function() {
+    var sortBy = $('#sort_field').val();
+    if (sortBy)
+      $('th[data-sort-field=' + sortBy + ']').addClass('active');
+
+    $('th[data-sort-field]').click(function() {
+      var form = $(this).parents('form');
+      var field = $(this).data('sort-field');
+      var order = $('#sort_order').val() == 'asc' ? 'desc' : 'asc';
+      $('#sort_order').val(order);
+      $('#sort_field').val(field);
+      form.submit();
+    });
+  });
+</script>
