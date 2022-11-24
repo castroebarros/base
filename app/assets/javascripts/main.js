@@ -10,20 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//x require turbolinks
 //= require jquery
 //= require jquery.mask
 //= require jquery_ujs
 //= require jquery_nested_form
-//x require moment
-//x require fullcalendar
-//x require fullcalendar/lang/pt
 //= require bootstrap
 //= require_tree .
 
 jQuery(function() {
-
   /* Configuring phone mask to allow 8 or 9 digits. */
   var SPMaskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
@@ -35,7 +29,7 @@ jQuery(function() {
   };
 
   // Wrapping the formatters in order they can be used inside nested forms.
-  formatters = function()  {
+  const formatters = function()  {
     $('.money').maskMoney({prefix: "", allowZero: true, allowNegative: false, thousands: ".", decimal: ",", affixesStay: false});
     $('.select2').select2({language: 'pt-BR'});
 
@@ -46,5 +40,4 @@ jQuery(function() {
   }
   formatters();
   $(document).on('nested:fieldAdded', formatters);
-
 });
