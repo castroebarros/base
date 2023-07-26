@@ -10,14 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery.mask
 //= require jquery_ujs
 //= require jquery_nested_form
-//= require bootstrap
+// require bootstrap
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .
 
 jQuery(function() {
+
   /* Configuring phone mask to allow 8 or 9 digits. */
   var SPMaskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';

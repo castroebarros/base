@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  get 'samples/:action', controller: 'samples'
+
   resources :clients
   resources :users do
     get :confirm, on: :member

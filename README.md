@@ -97,18 +97,27 @@ The `logo` is used only on login page, and `app_name` is used in both: login pag
 
 ## TODO
 
-- Upgrade bootstrap
-- Something to take easy association scaffolds (return_to)
-- Translation on scaffold (model name)
-- Show with long created_at
-- Add details link to scaffold index
-- Include micro_payments gem
-- Include pundit with generators
-- Dashboard page
+[access control]
 - User registrations (controller, menu)
 - Change password
 - Recovery password page
+- Include pundit with generators
+
+[general]
+- Upgrade bootstrap
+- Include micro_payments gem
+- Something to take easy association scaffolds (return_to)
+- Add details link to scaffold index
+- Show with long created_at
+- Dashboard page
+
+[models]
+- Reais
+- Uploads with carrierwave
 - Models and partial for attachment
+
+[settings]
+- Settings table
 - Doc to create bucket via aws client
 
 

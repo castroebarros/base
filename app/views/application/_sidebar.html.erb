@@ -1,0 +1,82 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" data-controller="sidebar" data-active-menu="<%= @menu %>">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/" data-nav-link="home">
+          <span data-feather="home" class="align-text-bottom"></span>
+          Início
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clients" data-nav-link="clients">
+          <span data-feather="users" class="align-text-bottom"></span>
+          Clientes
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/samples/board" data-nav-link="board">
+          <span data-feather="trello" class="align-text-bottom"></span>
+          Pedidos
+        </a>
+      </li>
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+      <span>Administração</span>
+    </h6>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/samples/dashboard" data-nav-link="dashboard">
+          <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+          Relatórios
+        </a>
+      </li>
+      <% if policy(User).index? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/users" data-nav-link="users">
+            <span data-feather="key" class="align-text-bottom"></span>
+            Controle de acesso
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+      <span>Favoritos</span>
+      <a class="link-secondary" href="#" aria-label="Adicionar aos favoritos" title="Adicionar aos favoritos">
+        <span data-feather="plus-circle" class="align-text-bottom"></span>
+      </a>
+    </h6>
+    <p class="mx-3 mt-2" style="font-size: 0.8em">
+      Nenhum favorito adicionado.
+    </p>
+    <!--
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span data-feather="file-text" class="align-text-bottom"></span>
+          Current month
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span data-feather="file-text" class="align-text-bottom"></span>
+          Last quarter
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span data-feather="file-text" class="align-text-bottom"></span>
+          Social engagement
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span data-feather="file-text" class="align-text-bottom"></span>
+          Year-end sale
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+</nav>

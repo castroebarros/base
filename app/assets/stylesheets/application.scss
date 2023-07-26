@@ -11,5 +11,35 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
  */
+
+@import 'bootstrap';
+
+.page-header {
+  @extend .d-flex, .justify-content-between, .flex-wrap, .flex-md-nowrap, .align-items-center, .pt-3, .pb-2, .mb-3, .border-bottom;
+}
+
+.card-list {
+  @extend .card;
+  background-color: #f2f4f5;
+}
+.card-list-header {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+.card-list-body {
+  @extend .card-body;
+  padding: 5px;
+
+  .card {
+    border: none;
+    border-bottom: 1px solid darkgray;
+    border-radius: 3px;
+    margin-bottom: 3px;
+  }
+  .card-body {
+    padding: 5px 10px;
+  }
+}

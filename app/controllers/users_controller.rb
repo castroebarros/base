@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action { @menu = 'users' }
   before_action :set_user, only: [:show, :edit, :update, :destroy, :confirm, :invite]
 
   # GET /users

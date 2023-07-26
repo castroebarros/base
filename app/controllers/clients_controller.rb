@@ -1,7 +1,13 @@
 class ClientsController < ScaffoldController
+  before_action { @menu = 'clients' }
+
   private
     def collection
-      Client.order('name ASC')
+      scope = Client.by_name
+      if params[:q].present?
+        scope = scope.search(params[:q])
+      end
+      scope
     end
 
     def permit_params

@@ -96,3 +96,5 @@ gem 'jquery_mask_rails'
 # gem 'chartkick'
 # gem 'dateslices'
 gem 'pundit'
+
+gem "bootstrap", "~> 5.2"
